@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d364328151328314babb434f69c19008
+timeCreated: 1471005242
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 46591
+  packageName: JazzCreate Pixel Multi-Purpose UI
+  packageVersion: 1.0.2
+  assetPath: Assets/JazzCreateMultiUI/Prefabs/Pre_Made_Prefabs/MusicSymbol.prefab
+  uploadId: 132106

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d524606b54dec694ca9a31b6c089bb02
+timeCreated: 1470837421
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 46591
+  packageName: JazzCreate Pixel Multi-Purpose UI
+  packageVersion: 1.0.2
+  assetPath: Assets/JazzCreateMultiUI/Prefabs/Pre_Made_Prefabs/Cross.prefab
+  uploadId: 132106

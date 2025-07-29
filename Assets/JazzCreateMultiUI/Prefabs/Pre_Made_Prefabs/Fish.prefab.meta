@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 74105d8dbb2dabb4693b49af8121d8d8
+timeCreated: 1470836820
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 46591
+  packageName: JazzCreate Pixel Multi-Purpose UI
+  packageVersion: 1.0.2
+  assetPath: Assets/JazzCreateMultiUI/Prefabs/Pre_Made_Prefabs/Fish.prefab
+  uploadId: 132106
