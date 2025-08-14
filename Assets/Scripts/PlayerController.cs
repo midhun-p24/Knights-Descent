@@ -33,7 +33,19 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        // --- THIS IS THE FIX ---
+        // This pattern ensures there is only ever one player instance.
+        if (Instance == null)
+        {
+            Instance = this;
+            // Don't destroy the player when a new level is loaded
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // If another player already exists (from a previous level), destroy this new one.
+            Destroy(gameObject);
+        }
     }
 
     void Start()

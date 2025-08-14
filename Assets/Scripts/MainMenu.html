@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight's Descent - Main Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #1a1a1a;
+            color: #f0e6d2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #8a6d3b;
+            border-radius: 12px;
+            padding: 2rem 3rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+        }
+        h1 {
+            font-size: 4rem;
+            color: #e6c382;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #dcdcdc;
+        }
+        input {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #333;
+            border: 1px solid #8a6d3b;
+            color: #f0e6d2;
+            text-align: center;
+            font-size: 1.5rem;
+            width: 100px;
+            border-radius: 6px;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        button {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #8a6d3b;
+            color: #1a1a1a;
+            font-size: 2rem;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            border: 2px solid #f0e6d2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: none;
+        }
+        button:hover {
+            background-color: #f0e6d2;
+            color: #8a6d3b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Knight's Descent</h1>
+        <p>How deep will you venture?</p>
+        <label for="levelInput" class="block text-xl mb-2">Enter Number of Levels:</label>
+        <input type="number" id="levelInput" value="5" min="1" max="50">
+        <br>
+        <button onclick="startGame()">Begin Descent</button>
+    </div>
+
+    <script>
+        function startGame() {
+            const levelCount = document.getElementById('levelInput').value;
+            if (levelCount && levelCount > 0) {
+                // Store the number of levels in localStorage to be accessed by the game scene
+                localStorage.setItem('totalLevels', levelCount);
+                // Redirect to your main game scene file
+                // IMPORTANT: You must rename "GameScene.html" to whatever your main game's HTML file is named.
+                window.location.href = "GameScene.html"; 
+            } else {
+                alert("Please enter a valid number of levels.");
+            }
+        }
+    </script>
+</body>
+</html>

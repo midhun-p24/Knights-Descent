@@ -1,19 +1,49 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // for reload or scene-load
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public int totalLevels; // No longer needs a default value here
+    public int currentLevel = 1;
+
     void Awake()
     {
-        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            // --- THIS IS THE FIX ---
+            // Load the total number of levels that was saved by the Main Menu.
+            // If no value was saved, default to 5 levels.
+            totalLevels = PlayerPrefs.GetInt("TotalLevels", 5);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void WinGame()
+    public void GoToNextLevel()
     {
-        Debug.Log("You Win!");
-        // TODO: show UI, then restart or load next level
+        if (currentLevel < totalLevels)
+        {
+            currentLevel++;
+            Debug.Log("Proceeding to Level " + currentLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            WinGame();
+        }
+    }
+
+    private void WinGame()
+    {
+        Debug.Log("You have cleared all the levels! YOU WIN!");
+        // IMPORTANT: Make sure your main menu scene is named "MainMenu" in your Build Settings.
+        SceneManager.LoadScene("MainMenu");
     }
 }

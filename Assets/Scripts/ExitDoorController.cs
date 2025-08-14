@@ -4,7 +4,6 @@ using UnityEngine;
 public class ExitDoorController : MonoBehaviour
 {
     public bool isLocked = true;
-    public string requiredKey = "ExitKey";
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,9 +13,17 @@ public class ExitDoorController : MonoBehaviour
             Debug.Log("Door is locked. Need the key!");
             return;
         }
-        GameManager.Instance.WinGame();
+
+        // --- MODIFIED: Call the GameManager to go to the next level ---
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.GoToNextLevel();
+        }
+        else
+        {
+            Debug.LogError("GameManager not found!");
+        }
     }
 
-    // Call this from your KeyPickup script when player gets the key
     public void Unlock() => isLocked = false;
 }
